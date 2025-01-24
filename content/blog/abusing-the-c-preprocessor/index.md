@@ -1,7 +1,7 @@
 +++
 title = "Abusing The C Preprocessor: Writing A 4-Bit Adder"
+short = "String Interpolation Is All You Need."
 date = 2013-10-01
-aliases = ["/blog/abusing-the-c-preprocessor-writing-a-4-bit-adder"]
 
 [taxonomies]
 tags=["c", "cursed"]

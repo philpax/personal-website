@@ -1,0 +1,48 @@
+[package]
+name = "paxsite"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+members = [".", "bake_assets", "paxcss", "paxhtml", "paxhtml_macro"]
+
+[workspace.dependencies]
+anyhow = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+syntect = "5.2"
+image = { version = "0.25.1", features = [
+    "png",
+    "ico",
+], default-features = false }
+
+[dependencies]
+anyhow = { workspace = true }
+chrono = { version = "0.4.37", default-features = false, features = [
+    "std",
+    "now",
+] }
+markdown = "1.0.0-alpha.16"
+rss = { version = "2.0.7", features = ["atom"] }
+serde = { workspace = true }
+syntect = { workspace = true }
+toml = "0.8.12"
+toml-datetime-compat = { version = "0.3.0", features = ["chrono"] }
+
+# serve
+base64 = { version = "0.22.1", optional = true }
+sha1 = { version = "0.10.6", optional = true }
+
+paxhtml = { path = "paxhtml" }
+paxcss = { path = "paxcss" }
+
+[features]
+development = ["serve"]
+serve = ["dep:base64", "dep:sha1"]
+dump_tree = ["paxhtml/dump_tree"]
+
+[profile.dev.package]
+image.opt-level = 3
+crc32fast.opt-level = 3
+miniz_oxide.opt-level = 3
+png.opt-level = 3
+syntect.opt-level = 3

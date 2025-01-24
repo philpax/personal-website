@@ -1,0 +1,17 @@
+[package]
+name = "paxhtml"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+html-escape = "0.2.13"
+
+paxhtml_macro = { path = "../paxhtml_macro", optional = true }
+serde = { version = "1.0", features = ["derive"], optional = true }
+serde_json = { version = "1.0", optional = true }
+
+[features]
+default = ["macros"]
+macros = ["dep:paxhtml_macro"]
+serde = ["dep:serde"]
+dump_tree = ["serde", "dep:serde_json"]

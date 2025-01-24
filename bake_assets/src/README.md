@@ -1,0 +1,2 @@
+- `Pug.sublime-syntax`: <https://github.com/davidrios/pug-tmbundle/blob/e165db8b4cd292acb4160875b5622db9298fbc57/Syntaxes/Pug.sublime-syntax>
+- `ayu-dark.sublime-color-scheme`: <https://github.com/dempfi/ayu/blob/362525bcd7a832684eed5a0e054a97356fdf353a/ayu-dark.sublime-color-scheme>
