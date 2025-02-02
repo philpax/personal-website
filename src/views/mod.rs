@@ -40,7 +40,7 @@ impl SocialMeta {
     pub fn into_social_meta(self, context: ViewContext) -> HashMap<String, String> {
         HashMap::from_iter(
             [
-                ("og:title", Some(self.full_title(context))),
+                ("og:title", self.title.clone()),
                 ("og:description", self.description.clone()),
                 ("og:image", self.image),
                 ("og:site_name", Some(context.website_name.into())),
